@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Register Page</title>
+
+<style>
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: silver;
+}
+
+form {
+	border: 3px solid #f1f1f1;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.container {
+	margin: auto;
+	width: 50%;
+	padding: 5px;
+}
+/* Full-width input fields */
+input[type=text], input[type=password] {
+	width: 100%;
+	padding: 8px;
+	margin: 3px 0 18px 0;
+	display: inline-block;
+	border: none;
+	background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+	background-color: #ddd;
+	outline: none;
+}
+/* Overwrite default styles of hr */
+
+/* Set a style for the submit button */
+.registerbtn {
+	background-color: teal;
+	color: white;
+	padding: 16px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 50%;
+	opacity: 0.9;
+}
+
+.registerbtn:hover {
+	opacity: 1;
+}
+/* Add a blue text color to links */
+a {
+	color: black;
+}
+
+h1 {
+	text-align: center;
+}
+
+p {
+	text-align: center;
+}
+
+.signin {
+	background-color: #f1f1f1;
+	text-align: center;
+}
+</style>
+
+
+
+</head>
+<body>
+	<div class="container my-2" align="center">
+		<h1>Employee Registration</h1>
+		<p>Please fill in this form to create an account.</p>
+					<p th:text="${message}"></p>
+		
+
+		<form method="post" action="/InsertData"
+			style="border: 1px solid #ccc">
+
+			<div class="container">
+				<br> <label> <input type="text" placeholder="name"
+					name="name" required>
+				</label> <label> <input type="text" placeholder="age" age="age"
+					name="age" required></label> <label> <input type="text"
+					pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Invalid email address"
+					placeholder="email" mail="email" name="email" required></label> <label><input
+					type="password" placeholder="password" password="password"
+					name="password" required></label>
+
+				<button type="submit" class="registerbtn">Register</button>
+			</div>
+			<div class="container signin">
+				<p>
+					Already have an account? <a href="/login">Sign in</a>.
+				</p>
+			</div>
+
+		</form>
+
+	</div>
+</body>
+</html>
+
+

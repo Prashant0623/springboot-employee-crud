@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Update page</title>
+<style>
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: silver;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.container {
+	margin: auto;
+	width: 50%;
+	padding: 5px;
+}
+/* Full-width input fields */
+input[type=text], input[type=password] {
+	width: 100%;
+	padding: 15px;
+	margin: 5px 0 22px 0;
+	display: inline-block;
+	border: none;
+	background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+	background-color: #ddd;
+	outline: none;
+}
+/* Overwrite default styles of hr */
+hr {
+	border: 1px solid #f1f1f1;
+	margin-bottom: 15px;
+}
+/* Set a style for the submit button */
+.update {
+	background-color: black;
+	color: white;
+	padding: 16px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 50%;
+	opacity: 0.9;
+}
+
+.update:hover {
+	opacity: 1;
+}
+/* Add a blue text color to links */
+a {
+	color: black;
+}
+
+h1 {
+	text-align: center;
+}
+
+h2 {
+	text-align: center;
+}
+
+.center {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+
+	<h1>Update Employee Data</h1>
+	<div class="container">
+
+		<form method="POST" th:action="@{/edit}" th:object="${student}">
+
+
+			<label><input type="text" th:field="*{id}"
+				readonly="readonly" /></label> <label> <input type="text"
+				th:field="*{name}" placeholder="name" name="name" required>
+			</label> <label><input type="text" th:field="*{age}"
+				placeholder="age" name="age" required></label> <label> <input
+				type="text" th:field="*{email}" pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+				title="Invalid email address" placeholder="email" name="email"
+				required>
+			</label> <label><input type="password" placeholder="password"
+				name="password" required></label>
+
+
+
+			<h2>
+
+				<button type="submit" class="update">update</button>
+			</h2>
+		</form>
+	</div>
+
+
+
+
+</body>
+</html>

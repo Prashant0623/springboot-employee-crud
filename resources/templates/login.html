@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Login Page</title>
+<style>
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+form {
+	border: 3px solid #f1f1f1;
+}
+
+input[type=text], input[type=password] {
+	width: 100%;
+	padding: 8px;
+	margin: 3px 0 18px 0;
+	display: inline-block;
+	border: none;
+	background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+	background-color: #ddd;
+	outline: none;
+}
+
+.login {
+	background-color: teal;
+	color: white;
+	padding: 16px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 50%;
+	opacity: 0.9;
+}
+
+.login:hover {
+	opacity: 1;
+}
+
+.container {
+	margin: auto;
+	width: 50%;
+	padding: 3px;
+}
+
+* span.psw {
+	float: right;
+	padding-top: 16px;
+}
+
+h2 {
+	text-align: center;
+}
+</style>
+</head>
+<body>
+	<h1 align="center">Employee Login</h1>
+	<p th:text="${msg}"></p>
+
+
+
+	<form method="post" action="/checkLogin">
+		<div class="container">
+			<br> <label> <input type="text"
+				pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Invalid email address"
+				placeholder="email" name="email" required></label> <label> <input
+				type="password" placeholder="password" name="password" required>
+			</label>
+
+
+			<div style="text-align: center">
+				<button type="submit" class="login">login</button>
+			</div>
+		</div>
+
+
+
+		<h2>
+			<font size="3px"> Create new account? <a href="/ShowRegister">Sign
+					up</a>.
+			</font>
+		</h2>
+
+
+	</form>
+
+
+</body>
+</html>
